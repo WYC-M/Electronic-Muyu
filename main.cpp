@@ -48,8 +48,6 @@ int main()
             // Êä³ö·ÖÊý
             out(score);
 
-            Sleep(500);
-
             system("cls");
             start(score);
 
