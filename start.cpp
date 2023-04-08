@@ -10,7 +10,7 @@ void start(int startscore)
     char input[64]; // texe.txt内的文本最多支持64位字符
 
     cout << "=====================================" << endl;
-    cout << "电子木鱼 v2.1 佛祖开光特别版 By WYC-M" << endl;
+    cout << "电子木鱼 v2.2 佛祖开光特别版 By WYC-M" << endl;
     cout << "=====================================" << endl;
 
     cout << endl;
@@ -21,7 +21,7 @@ void start(int startscore)
     if (access("text.txt", F_OK) == -1)
     {
         cout << "1 近日有不法分子对佛祖进行DDOS攻击,造成佛祖服务器崩溃.和蔼!任何邪恶,终将绳之以法!" << endl;
-        cout << "2 电子木鱼 v2.1 已发布,来看看更新了什么" << endl;
+        cout << "2 电子木鱼 v2.2 已发布,来看看更新了什么" << endl;
         cout << "  网址: https://github.com/WYC-M/Electronic-Muyu" << endl;
     }
 
@@ -43,7 +43,15 @@ void start(int startscore)
 
     cout << endl;
 
-    cout << "您的功德:" << startscore;
+    if (access("dev.txt", F_OK) == 0)
+    {
+        cout << "您的功德-----------------------" << endl;
+        cout << startscore;
+    }
+    else
+    {
+        cout << "您的功德" << startscore;
+    }
 
     // 称号
     if (startscore < 0)
@@ -65,5 +73,10 @@ void start(int startscore)
     if (startscore >= 5000)
     {
         cout << "   [来来来,佛祖你来当]" << endl;
+    }
+
+    if (access("dev.txt", F_OK) == 0)
+    {
+        cout << "-------------------------------" << endl;
     }
 }
