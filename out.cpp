@@ -6,7 +6,7 @@ using namespace std;
 void out(int outscore) // 输出分数
 {
     ofstream out;
-    out.open("score.ewf");
+    out.open(".ewf/score.txt");
     out << outscore;
     out.close();
 }

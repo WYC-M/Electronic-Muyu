@@ -3,8 +3,12 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <windows.h>
-#include <unistd.h>
+#include <mmsystem.h>
+#include <dsound.h>
+#include <io.h>
 #include "header.h"
+
+#pragma comment(lib, "WINMM.LIB")
 
 using namespace std;
 
@@ -14,17 +18,24 @@ int main()
     int score;      // 功德值
     int backrandom; // 返回的随机数
 
-    // 当没有score.ewf时，创建该文件并将内容设置为0
-    if (access("score.ewf", F_OK) == -1)
+    // 检查.ewf文件是否存在，若不存在则创建
+    string dir = ".ewf";              // 文件夹路径
+    if (_access(dir.c_str(), 0) == -1) // 判断该文件夹是否存在
+    {
+        CreateDirectory(".ewf", NULL);                   // 创建文件夹
+    }
+
+    // 当没有score.txt时，创建该文件并将内容设置为0
+    if (_access(".ewf/score.txt", 0) == -1)
     {
         ofstream out;
-        out.open("score.ewf");
+        out.open(".ewf/score.txt");
         out << "0";
         out.close();
     }
 
-    // 读取功德值(score.ewf)
-    ifstream in("score.ewf");
+    // 读取功德值(score.txt)
+    ifstream in(".ewf/score.txt");
     in >> score;
     in.close();
 
@@ -44,7 +55,7 @@ int main()
             cout << endl;
 
             cout << "功德+1";
-            
+
             // 输出分数
             out(score);
 
@@ -173,13 +184,26 @@ int main()
                     break;
                 }
 
-                    system("cls");
-                    start(score);
+                system("cls");
+                start(score);
                 }
 
                 system("cls");
                 start(score);
             }
+        }
+
+        case 51:
+        {                    
+            score = score + 10;
+            system("cls");
+            start(score);
+            
+            cout << endl;
+            cout << "正在播放大悲咒...功德+10" << endl;
+
+            mciSendString("open .ewf/backgroundmusic.mp3 alias mysong", NULL, 0, NULL);
+            mciSendString("play mysong wait", NULL, 0, NULL);
         }
         }
     }
