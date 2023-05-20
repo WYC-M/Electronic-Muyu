@@ -9,10 +9,6 @@ GitHub 作者主页 <https://github.com/WYC-M>
 
 本软件遵循 MIT 许可
 
-软件图标来自 [Iconfont](https://www.iconfont.cn) 
-
-![软件图标](https://wyc-m.github.io/pic/muyu.png)
-
 ## 二 用法
 
 1 敲木鱼：按**空格**键，功德+1  
