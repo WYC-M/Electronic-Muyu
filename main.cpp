@@ -221,11 +221,11 @@ int main()
                     break;
                 }
 
-                case 3: // 3 佛祖陪你一起笑
+                case 3: // 3 感谢惠顾
                 {
                     cout << endl;
 
-                    cout << "哈哈哈哈哈哈哈哈哈哈" << endl;
+                    cout << "感谢惠顾" << endl;
 
                     Sleep(2000);
 
@@ -276,6 +276,20 @@ int main()
             system("cls");
             
             config();
+
+            // 当没有score.txt时，创建该文件并将内容设置为0
+            if (_access(".ewf/score.txt", 0) == -1)
+            {
+                ofstream out;
+                out.open(".ewf/score.txt");
+                out << "0";
+                out.close();
+            }
+
+            // 读取功德值(score.txt)
+            ifstream in(".ewf/score.txt");
+            in >> score;
+            in.close();
 
             system("cls");
             start(score);

@@ -12,7 +12,7 @@ void config()
     char configgongde[64];
     
     cout << "=====================================" << endl;
-    cout << "电子木鱼 v2.6 佛祖开光特别版 By WYC-M" << endl;
+    cout << "电子木鱼 v3.0 佛祖开光特别版 By WYC-M" << endl;
     cout << "=====================================" << endl;
 
     cout << endl;
@@ -113,9 +113,9 @@ void config()
         system("del /S /Q .ewf\\score.txt");
 
         cout << endl;
-        cout << "设置完成,请重启程序" << endl;
+        cout << "设置完成" << endl;
 
-        Sleep(1000);
+        Sleep(500);
 
         return;
     }
