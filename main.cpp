@@ -325,5 +325,11 @@ int main()
                 start(score);
             }
         }
+
+        if (press == 117)//u
+        {
+            system("start updater.exe");
+            return 0;
+        }
     }
 }
