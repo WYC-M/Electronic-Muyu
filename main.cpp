@@ -299,7 +299,7 @@ int main()
         if (press == 97)//a
         {
             cout << endl;
-            cout << "请输入自动敲击木鱼次数: ";
+            cout << "请输入自动敲击木鱼次数 ";
             cin >> autotimes;
             
             system("cls");
