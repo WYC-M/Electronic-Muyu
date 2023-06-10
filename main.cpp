@@ -321,6 +321,7 @@ int main()
                 }
 
                 score++;
+                out(score);
                 system("cls");
                 start(score);
             }
