@@ -3,6 +3,7 @@
 #include <fstream>
 #include <io.h>
 #include <windows.h>
+#include "header.h"
 
 using namespace std;
 
@@ -11,11 +12,7 @@ void config()
     int configpress = 0;
     char configgongde[64];
     
-    cout << "=====================================" << endl;
-    cout << "电子木鱼 v3.0 佛祖开光特别版 By WYC-M" << endl;
-    cout << "=====================================" << endl;
-
-    cout << endl;
+    title();
 
     cout << "设置--------------------------------------------------------------------------------------" << endl;
     cout << "1_自定义功德文本   2_恢复默认功德文本   3_自定义公告文本   4_恢复默认公告文本   5_清除功德" << endl;

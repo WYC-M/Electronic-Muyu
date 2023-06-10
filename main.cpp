@@ -17,6 +17,7 @@ int main()
     int press;      // 键盘按下内容
     int score;      // 功德值
     int backrandom; // 返回的随机数
+    int autotimes;//自动敲击木鱼次数
     char maininput[64];
 
     // 检查.ewf文件夹是否存在，若不存在则创建
@@ -293,6 +294,36 @@ int main()
 
             system("cls");
             start(score);
+        }
+
+        if (press == 97)//a
+        {
+            cout << endl;
+            cout << "请输入自动敲击木鱼次数: ";
+            cin >> autotimes;
+            
+            system("cls");
+
+            for (int i = 0; i < autotimes; i++)
+            {
+                cout << endl;
+
+                if (_access(".ewf/config_gongde.ini", 0) == -1)
+                {
+                    cout << "功德+1 (自动)";
+                }
+                else
+                {
+                    ifstream in(".ewf/config_gongde.ini");
+                    in >> maininput;
+                    cout << maininput << "+1 (自动)";
+                    in.close();
+                }
+
+                score++;
+                system("cls");
+                start(score);
+            }
         }
     }
 }
