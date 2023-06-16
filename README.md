@@ -18,7 +18,7 @@
 
 4 播放大悲咒：按**3**，功德+10 
 
-![软件截图](https://wyc-m.github.io/pic/muyu-screenshot.png)
+![软件截图](https://wyc-m.github.io/pic/muyu/muyu-screenshot.png)
 
 
 ## 三 作者的悄悄话（奇妙小功能）
@@ -33,9 +33,9 @@
 
 4 清空功德：在设置界面选择 `5_清除功德` 然后重启程序即可
 
-![设置](https://wyc-m.github.io/pic/muyu-config.png)
+![设置](https://wyc-m.github.io/pic/muyu/muyu-config.png)
 
 ## 四 编译
 如果您使用 Visual Studio 进行编译，请把项目属性页中的 `高级-高级属性-字符集` 设置为 `未设置`
 
-![项目属性](https://wyc-m.github.io/pic/muyu-build.png)
+![项目属性](https://wyc-m.github.io/pic/muyu/muyu-build.png)
